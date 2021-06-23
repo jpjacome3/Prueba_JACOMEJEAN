@@ -7,6 +7,7 @@ package Test;
 
 import Dominio.Estudiante;
 import java.io.InputStream;
+import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -118,7 +119,8 @@ static Scanner datos = new Scanner(System.in);
               menor+= menor;
             }      
         }
-    }   
+    } 
+         System.out.println(Arrays.toString(est));
     }
 }
     //implementar un metodo que muestre el listado de estudiantes ordenados de mayor a menor
