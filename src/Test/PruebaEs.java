@@ -25,8 +25,8 @@ static Scanner datos = new Scanner(System.in);
         llenaEstudiante(estudiantes);
         System.out.println("Listado de Estudiantes ordenados de mayor a menor nota");
         //llamar al metodo para ordenar
-        for(Estudiante est:estudiantes){
-            System.out.println(est);
+        for(int i = 0; i < estudiantes.length; i++){
+            System.out.println(estudiantes[i].getNota());
         }
         nroHombres=porcentajegenero(estudiantes); 
         System.out.println("El % de hombres X encima del promedio :"+porcentajePromedio(estudiantes, nroHombres, 'm'));
@@ -107,23 +107,23 @@ static Scanner datos = new Scanner(System.in);
     }
     
     public static void OrdenarN(Estudiante est[]){
-        int menor = 0;
+        int mayor = 20;
         for(int i = 0; i < 20; i++){
-        menor+= est[i].getNota();
+        mayor = (int) est[0].getNota();
 
-        if (est[i].getNota() < menor){
-            menor+= est[i].getNota();
+        if (est[i].getNota() > mayor){
+            mayor = (int) est[i].getNota();
         }
         else{
-            if (est[i].getNota() > menor){
-              menor+= menor;
+            if (est[i].getNota() < mayor){
+              mayor= mayor;
             }      
         }
     } 
-         System.out.println(Arrays.toString(est));
     }
 }
     //implementar un metodo que muestre el listado de estudiantes ordenados de mayor a menor
     //imprimir ese metodo
 
-       
+
+      
