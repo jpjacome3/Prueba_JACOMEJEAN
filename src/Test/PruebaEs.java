@@ -107,17 +107,14 @@ static Scanner datos = new Scanner(System.in);
     }
     
     public static void OrdenarN(Estudiante est[]){
-        int mayor = 20;
-        for(int i = 0; i < 20; i++){
-        mayor = (int) est[0].getNota();
-
-        if (est[i].getNota() > mayor){
-            mayor = (int) est[i].getNota();
-        }
-        else{
-            if (est[i].getNota() < mayor){
-              mayor= mayor;
-            }      
+        double aux= 0;
+         for (int i = 0; i < est.length; i++) {
+        for (int j = 1; j < (est.length - i); j++) {
+            if (est[j - 1].getNota() > est[j].getNota()) {
+                aux = est[j-1].getNota();
+                est[j - 1].getNota() = est[j].getNota();
+                est[j].getNota() = aux;
+            }
         }
     } 
     }
